@@ -1,0 +1,62 @@
+<div class="page-header">
+  <h1>Shedulder JS</h1>
+</div>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        {{!-- <li><a href="/index">Home</a></li> --}}
+        {{!-- <li><a href="/signup">Sign Up</a></li> --}}
+        <li><a href="/privateOffice">Личный кабинет</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        {{!-- <li><a href="/login">Log In</a></li> --}}
+        <li>Пользователь <b>{{userName}}</b> в системе<br>
+          <a href="/logout">Log Out</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container row">
+  <h1>Привет, {{userName}}, вы в личном кабинете</h1>
+  <h3><b>Ваши данные:</b></h3><br>
+ 
+  Имя: {{name}}<br>
+  Фамилия: {{surname}}<br>
+  email: {{email}}<br>
+  Возраст: {{age}}<br>
+  Роль: {{role}}<br>
+  Навыки: {{skill}}<br>
+ 
+  <br><br>
+  <a href="/api/todo">+ Добавить задачу</a>
+  </div>
+  <div>
+ {{#if findTodo}}
+ <h3>ВАШИ ЗАДАЧИ:</h3>
+ {{estimateDate}}
+{{#each findTodo}}
+<ul>
+  <li>Создал задачу: {{userNameCreater}}</li>
+  <li>Название задачи: {{nameTodo}}</li>
+  <li>Описание: {{descriptionTodo}}</li>
+  <li>Начало: {{start}} {{startClock}}</li>
+  <li>Конец: {{end}}{{endClock}}</li>
+  <li>Статус выполнения: {{status}}</li>
+  <li>До завершения: {{estimateDate}} дней</li>
+</ul><br>
+<a href="/edit?nameItem=&aboutItem=&start=&end=">Корректировать задачу - <b>{{this.nameTodo}}</b></a><br>
+<a href="/api/todo?nameTodo={{this.nameTodo}}&_method=DELETE">Удалить задачу - <b>{{this.nameTodo}}</b></a>
+  {{/each}}
+  <br>
+  {{else}}
+  
+ 
+ <div id='list'><h3><b>На данный момент у Вас нет задач.</b></h3><br></div>
+  <a href="/api/todo">+ Добавить задачу</a>
+  {{/if}}
+</div>

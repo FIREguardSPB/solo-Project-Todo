@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h1>SECRET AUCTION</h1>
+</div>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        {{!-- <li><a href="/index">Home</a></li> --}}
+        {{!-- <li><a href="/signup">Sign Up</a></li> --}}
+        <li><a href="/dashboard">Личный кабинет</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        {{!-- <li><a href="/login">Log In</a></li> --}}
+              <li>
+                <a href="/logout">Log Out</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container row">
+  <h1>{{name}}, внесите изменения для вашего товара</h1>
+  <form action="/edit" method="POST">
+<input type="text" name="nameItem" value={{nameItem}} >Название товара<br>
+<input type="text" name="aboutItem" value={{aboutItem}} >Описание товара<br>
+<input type="date" name="start" value={{start}} >Начало торгов<br>
+<input type="date" name="end" value={{end}} >Окончание торгов<br>
+<button type="submit">Добавить изменения</button>
+</form>
+  
+
+
+
+</div>

@@ -1,0 +1,50 @@
+X-Content-Type-Options: nosniff
+<div class="page-header">
+  <h1>Shedulder JS</h1>
+</div>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        {{!-- <li><a href="/index">Home</a></li> --}}
+        {{!-- <li><a href="/signup">Sign Up</a></li> --}}
+        <li><a href="/privateOffice">Личный кабинет</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        {{!-- <li><a href="/login">Log In</a></li> --}}
+              <li>
+                <a href="/logout">Log Out</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container row">
+  <h1>{{username}}, введите данные по вашей задаче</h1>
+  <form action="/api/todo" id="addTodo" method="POST">
+<input type="text" name="nameTodo" id="nameTodo" required minlength="1">Название задачи<br>
+<input type="text" name="descriptionTodo" id="descriptionTodo" required minlength="1">Описание задачи<br>
+{{!-- <input type="text" name="userNameExecutor">Ответственный<br> --}}
+Начало задачи:<br>
+Дата:&nbsp;<input type="date" name="start" id="start" required minlength="1">&nbsp;Время:&nbsp;<input type="time" name="startClock" id="startClock" required minlength="1"><br>
+Окончание задачи:<br>
+Дата:&nbsp;<input type="date" name="end" id="end" required minlength="1">&nbsp;Время:&nbsp;<input type="time" name="endClock" id="endClock" required minlength="1"><br>
+Статус задачи:<br>
+<select name="status" id="status">
+        <option disabled>Статус задачи</option>
+        <option>Начата</option>
+        <option>Завершена</option>
+      </select>
+      <br>
+      <br>
+<button type="submit" id="btOn">Добавить</button>
+</form>
+  {{!-- <a href="/addItem">+ Добавить товар</a> --}}
+
+
+
+</div>
+
